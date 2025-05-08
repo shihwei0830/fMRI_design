@@ -2,10 +2,12 @@
 Use simulations to find optimal design efficiency for fMRI experiments
 
 5/8/2025: For trial sequence where there is only one stimulus (no feedback followed) during a trial
-get_optEff_1ev_deconv.m
-get_optEff_1ev.m
+get_optEff_1ev_deconv.m: for 1 ev (stimulus) implementing deconvolution (FIR) model
+get_optEff_1ev.m: for 1 ev (stimulus) without deconvolution.
+I recommend get_optEff_1ev_deconv because it gives you the option to perform deconvolution analysis.
 
 example:
+If your trial time is around 10 sec (5 sec stimlus) followed by avg 5 sec ITI and you want a run to last about 10 minutes. You can set
 % n_trials = 49; nT_run = 520; t_range = [2 12]; tr = 2; mu = 5; n_sim = 10000; leave_best = 10; fname = 'exp0';
 % results = get_optEff_1ev_deconv(n_trials,nT_run,t_range,tr,mu,n_sim,leave_best,fname)
 
